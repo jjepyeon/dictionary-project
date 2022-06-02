@@ -7,12 +7,11 @@ export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
   let [results, setResults] = useState(null);
 
-  function search(event) {
-    event.preventDefault();
-  }
-
   function handleResponse(response) {
     setResults(response.data[0]);
+  }
+  function search(event) {
+    event.preventDefault();
   }
 
   let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
@@ -24,17 +23,11 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary">
-      <form onSubmit={search}>
+      <form onSubmit={search} class="row justify-content-center">
         <input
           type="search"
           placeholder="Enter word"
           onChange={handleKeywordChange}
-        />
-        <input
-          type="submit"
-          class="btn btn-primary"
-          value="Search"
-          className="searchButton"
         />
       </form>
       <Results results={results} />
