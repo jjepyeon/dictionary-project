@@ -24,7 +24,7 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary">
-      <form onSubmit={search} class="row justify-content-center">
+      <form onSubmit={search} className="row justify-content-center">
         <input
           type="search"
           placeholder="Enter word"
