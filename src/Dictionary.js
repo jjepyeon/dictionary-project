@@ -13,7 +13,7 @@ export default function Dictionary() {
     console.log(response.data[0]);
   }
 
-  let apiUrl = `http://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+  let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 
   axios.get(apiUrl).then(handleResponse);
 
